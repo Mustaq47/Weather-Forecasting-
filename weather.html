@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Assistant</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Assistant</h1>
+            <div class="search-bar">
+                <input type="text" id="locationInput" placeholder="Search for a location" aria-label="Search location">
+                <button type="submit" id="searchButton" aria-label="Search">
+                    <span>Search</span>
+                </button>
+            </div>
+        </header>
+        <nav class="nav-tabs">
+            <button class="tab active" data-tab="today">Today</button>
+            <button class="tab" data-tab="tomorrow">Tomorrow</button>
+        </nav>
+        <main class="weather-display">
+            <div id="weatherInfo" class="weather-card" role="region" aria-live="polite">
+                <img id="weatherIcon" src="" alt="Weather icon" style="display: none;">
+                <div class="weather-main">
+                    <span id="location"></span>
+                    <span id="temperature"></span>
+                    <span id="description"></span>
+                </div>
+                <div class="date-timeline">
+                    <button class="date-nav" data-date="prev">Previous</button>
+                    <span id="currentDate">Wednesday, 6th August 2025</span>
+                    <button class="date-nav" data-date="next">Next</button>
+                </div>
+                <p id="weatherSummary"></p>
+            </div>
+            <table id="hourlyForecast" class="hourly-table" role="grid">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature</th>
+                        <th>Wind Speed</th>
+                        <th>Humidity</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+        <aside class="quick-nav">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#hourly">Hourly Forecast</a></li>
+                <li><a href="#temps">Temperatures</a></li>
+                <li><a href="#rain">Rain</a></li>
+                <li><a href="#wind">Wind</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </aside>
+    </div>
+    <script src="weather.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+/* Main Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #1E90FF;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#locationInput {
+    padding: 10px;
+    border: 2px solid #1E90FF;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 200px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1E90FF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#searchButton:hover {
+    background-color: #104E8B;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e7f1ff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab.active, .tab:hover {
+    background-color: #d0e7ff;
+}
+
+.tab:focus {
+    outline: 2px solid #104E8B;
+    outline-offset: 2px;
+}
+
+/* Main Weather Display */
+.weather-display {
+    flex: 2;
+    min-width: 300px;
+}
+
+.weather-card {
+    padding: 20px;
+    background: #e6f0fc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.weather-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#location {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#temperature {
+    font-size: 2.5rem;
+    color: #104E8B;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 1.1rem;
+    color: #1E90FF;
+    text-transform: capitalize;
+}
+
+.date-timeline {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.date-nav {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1E90FF;
+    color: white;
+    cursor: pointer;
+}
+
+.date-nav:hover {
+    background-color: #104E8B;
+}
+
+#weatherSummary {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Hourly Forecast Table */
+.hourly-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hourly-table th, .hourly-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.hourly-table th {
+    background-color: #e7f1ff;
+    font-weight: 500;
+}
+
+.hourly-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Quick Navigation Sidebar */
+.quick-nav {
+    flex: 1;
+    min-width: 200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quick-nav h3 {
+    color: #1E90FF;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.quick-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-nav li {
+    margin-bottom: 10px;
+}
+
+.quick-nav a {
+    color: #1E90FF;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quick-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+    .weather-display, .quick-nav {
+        flex: 1 1 100%;
+    }
+    .quick-nav {
+        order: 2;
+    }
+    .hourly-table th, .hourly-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 10px;
+    }
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    #locationInput {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .nav-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tab {
+        flex: 1 1 100px;
+        margin: 5px 0;
+    }
+    .weather-card {
+        padding: 15px;
+    }
+    #temperature {
+        font-size: 2rem;
+    }
+    #description {
+        font-size: 1rem;
+    }
+    .date-timeline {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .hourly-table {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .weather-card {
+        padding: 10px;
+    }
+    #temperature {
+        font-size: 1.5rem;
+    }
+    .hourly-table {
+        display: block;
+        overflow-x: auto;
+    }
+    .hourly-table th, .hourly-table td {
+        min-width: 80px;
+    }
+    .quick-nav {
+        padding: 10px;
+    }
+    .quick-nav h3 {
+        font-size: 1rem;
+    }
+    .quick-nav a {
+        font-size: 0.8rem;
+    }
+}
